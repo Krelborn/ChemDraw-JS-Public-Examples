@@ -8,7 +8,7 @@
     "postinstall": "cpr ../dependencies/chemdraw-js-license.xml  assets/ -o"
   },
   "dependencies": {
-    "@pki-chemistry/chemdraw-js": "file:../dependencies/chemdraw-js.tgz"
+    "@revvity-signals/chemdraw-js": "file:../dependencies/chemdraw-js.tgz"
   },
   "devDependencies": {
     "cpr": "^3.0.1",
