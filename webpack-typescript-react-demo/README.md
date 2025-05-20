@@ -22,7 +22,8 @@ You should have received three files as part of your ChemDraw JS subscription:
 For this demo:
 
 1. Copy the license into /dependencies.
-2. Install the npm package e.g. `npm install file:chemdraw-js-package.tgz` replacing "chemdraw-js-package.tgz" with the path to your ChemDraw JS package.
+2. Run `npm install` to install dependencies initial dependencies
+3. Install the npm package e.g. `npm install chemdraw-js-package.tgz` replacing "chemdraw-js-package.tgz" with the path to your ChemDraw JS package.
 
 For full functionality, the web service will need to be run using Docker. Map port 80 in the Docker image to 8080 on your machine, e.g.:
 ```
@@ -40,7 +41,7 @@ Once the copy is configured the script tag must be included in the output HTML. 
 
 ```
 plugins: [
-  new CopyPlugin([{ from: "node_modules/@pki-chemistry/chemdraw-js/dist/chemdrawweb", to: "assets/chemdrawweb"}]),
+  new CopyPlugin([{ from: "node_modules/@revvity-signals/chemdraw-js/dist/chemdrawweb", to: "assets/chemdrawweb"}]),
   new HtmlWebpackPlugin({
     title: "cdjs-webpack-demo",
     template: require("html-webpack-template"),
