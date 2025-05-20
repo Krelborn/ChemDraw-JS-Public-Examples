@@ -18,6 +18,7 @@ For this demo:
 
 1. Copy the license into /dependencies.
 2. Install the npm package e.g. `npm install file:chemdraw-js-package.tgz` replacing "chemdraw-js-package.tgz" with the path to your ChemDraw JS package.
+3. Run `npm install` again to install remaining dependencies
 
 For full functionality, the web service will need to be run using Docker. Map port 80 in the Docker image to 8080 on your machine, e.g.:
 ```
