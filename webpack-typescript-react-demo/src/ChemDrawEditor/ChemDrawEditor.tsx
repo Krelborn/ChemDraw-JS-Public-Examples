@@ -37,7 +37,7 @@ export function ChemDrawEditor({ onReady }: ChemDrawEditorProps): JSX.Element {
   // cleanup function being called before CDJS has initialized, in this case we set a flag
   // and dispose CDJS in the attach callback.
   useEffectOnce(() => {
-    let detachOnAttach = false;
+    let shouldDetachOnAttach = false;
 
     RevvitySignals.ChemDrawJS.attach({
       license,
@@ -46,7 +46,7 @@ export function ChemDrawEditor({ onReady }: ChemDrawEditorProps): JSX.Element {
         element: cdjsContainerRef.current!,
       },
     }).then(({ editor }) => {
-      if (detachOnAttach) {
+      if (shouldDetachOnAttach) {
         // Our cleanup function was called while CDJS was initializing, just dispose the attached
         // instance.
         editor.detach();
@@ -62,7 +62,7 @@ export function ChemDrawEditor({ onReady }: ChemDrawEditorProps): JSX.Element {
         setCDJS(null);
       } else {
         // Our instance isn't ready yet, set the flag to detach it when attach completes
-        detachOnAttach = true;
+        shouldDetachOnAttach = true;
       }
     };
   });
